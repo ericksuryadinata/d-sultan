@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Static Website</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        />
+        <style>
+            .fixed {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                padding: 1rem 1rem;
+            }
+            .tabs-with-content .tabs:not(:last-child) {
+                margin-bottom: 0;
+            }
+
+            .tabs-with-content .tab-content {
+                display: none;
+            }
+
+            .tabs-with-content .tab-content.is-active {
+                display: block;
+                margin-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-desktop">
+                    <div class="column is-one-quarter">
+                        <img
+                            src="https://via.placeholder.com/360x360?text=Visit+Blogging.com+Now"
+                            alt=""
+                        />
+                    </div>
+                    <div class="column">
+                        <div class="content is-medium has-text-justified">
+                            <p>
+                                Dari kualitas bumbu rempah lezat, kedelai tempe
+                                pilihan, serta hasil laut segar berpadu dalam
+                                satu produk terbaik
+                            </p>
+                            <p>
+                                D'Sultan kering tempe, teri, kacang istimewa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-desktop">
+                    <div class="column">
+                        <div class="content is-small has-text-centered">
+                            <h1>Sederhana yang istimewa</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-desktop">
+                    <div class="column">
+                        <img
+                            src="https://via.placeholder.com/360x360?text=Visit+Blogging.com+Now"
+                            alt=""
+                        />
+                    </div>
+                    <div class="column">
+                        <img
+                            src="https://via.placeholder.com/360x360?text=Visit+Blogging.com+Now"
+                            alt=""
+                        />
+                    </div>
+                    <div class="column">
+                        <img
+                            src="https://via.placeholder.com/360x360?text=Visit+Blogging.com+Now"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div class="columns is-desktop tabs-with-content">
+                    <div class="column">
+                        <div class="tabs is-centered">
+                            <ul>
+                                <li><a>250 Gram</a></li>
+                                <li><a>500 Gram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-desktop tabs-with-content">
+                    <div class="column">
+                        <div class="container tab-content">
+                            <img
+                                src="https://via.placeholder.com/360x360?text=Gambar+1"
+                                alt=""
+                            />
+                            <div class="content is-medium has-text-justified">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Culpa fugit modi reprehenderit
+                                consectetur atque perferendis repudiandae
+                                maxime. Et eos a ea harum aliquid accusantium
+                                molestias, fugiat deserunt vel voluptatibus
+                                voluptatem.
+                            </div>
+                        </div>
+                        <div class="container tab-content">
+                            <img
+                                src="https://via.placeholder.com/360x360?text=Gambar+2"
+                                alt=""
+                            />
+                            <div class="content is-medium has-text-justified">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Culpa fugit modi reprehenderit
+                                consectetur atque perferendis repudiandae
+                                maxime. Et eos a ea harum aliquid accusantium
+                                molestias, fugiat deserunt vel voluptatibus
+                                voluptatem.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer fixed">
+            <div class="content has-text-centered is-small is-primary">
+                <h1>ORDER NOW</h1>
+            </div>
+        </footer>
+        <script>
+            let tabsWithContent = (function () {
+                let tabs = document.querySelectorAll(".tabs li");
+                let tabsContent = document.querySelectorAll(".tab-content");
+
+                let deactvateAllTabs = function () {
+                    tabs.forEach(function (tab) {
+                        tab.classList.remove("is-active");
+                    });
+                };
+
+                let hideTabsContent = function () {
+                    tabsContent.forEach(function (tabContent) {
+                        tabContent.classList.remove("is-active");
+                    });
+                };
+
+                let activateTabsContent = function (tab) {
+                    tabsContent[getIndex(tab)].classList.add("is-active");
+                };
+
+                let getIndex = function (el) {
+                    return [...el.parentElement.children].indexOf(el);
+                };
+
+                tabs.forEach(function (tab) {
+                    tab.addEventListener("click", function () {
+                        deactvateAllTabs();
+                        hideTabsContent();
+                        tab.classList.add("is-active");
+                        activateTabsContent(tab);
+                    });
+                });
+
+                tabs[0].click();
+            })();
+        </script>
+    </body>
+</html>
