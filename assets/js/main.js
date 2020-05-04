@@ -33,33 +33,3 @@ let tabsWithContent = (function () {
 
     tabs[0].click();
 })();
-
-// Setup the breakpoint variable
-let breakpoint;
-
-// Get the current breakpoint
-let getBreakpoint = function () {
-    return window.getComputedStyle(document.body, ':before').content.replace(/\"/g, '');
-};
-
-let changeImageSrc = function () {
-    if (breakpoint === 'small') {
-        console.log("small");
-    } else {
-        console.log("not small");
-    }
-};
-
-// Calculate breakpoint on page load
-breakpoint = getBreakpoint();
-
-changeImageSrc();
-
-// Recalculate breakpoint on resize
-window.addEventListener('resize', function () {
-
-    breakpoint = getBreakpoint();
-
-    changeImageSrc();
-
-}, false);
