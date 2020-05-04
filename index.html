@@ -26,8 +26,18 @@
         />
         <link rel="icon" type="image/png" href="assets/img/favicon.png" />
         <link rel="apple-touch-icon" href="assets/img/icon-144x144.png" />
-        <link rel="preload" as="style" href="assets/css/main.min.css" onload="this.rel = 'stylesheet'"/>
-        <link rel="preload" as="style" href="assets/css/slider.min.css" onload="this.rel = 'stylesheet'"/>
+        <link
+            rel="preload"
+            as="style"
+            href="assets/css/main.min.css"
+            onload="this.rel = 'stylesheet'"
+        />
+        <link
+            rel="preload"
+            as="style"
+            href="assets/css/slider.min.css"
+            onload="this.rel = 'stylesheet'"
+        />
         <link rel="manifest" href="manifest.json" />
     </head>
     <body>
@@ -234,30 +244,74 @@
                     </div>
                 </div>
             </div>
+            <div id="snackbar">
+                Versi baru telah tersedia silahkan update
+                <a id="reload">Disini</a>
+            </div>
         </section>
         <div class="mb"></div>
-        <a href="https://wa.me/6282131300088?text=Hai%20Admin%2C%0A%0AMau%20order%20Kering%20Tempe%20D%27Sultan">
-        <footer class="footer fixed">
-            <div class="content has-text-centered is-small is-primary">
-                <img
-                    src="assets/img/dsultan-kering-tempe-order.webp"
-                    alt="dsultan-kering-tempe-order"
-                />
-            </div>
-        </footer>
+        <a
+            href="https://wa.me/6282131300088?text=Hai%20Admin%2C%0A%0AMau%20order%20Kering%20Tempe%20D%27Sultan"
+        >
+            <footer class="footer fixed">
+                <div class="content has-text-centered is-small is-primary">
+                    <img
+                        src="assets/img/dsultan-kering-tempe-order.webp"
+                        alt="dsultan-kering-tempe-order"
+                    />
+                </div>
+            </footer>
         </a>
         <script src="assets/js/slider.min.js" async></script>
         <script src="assets/js/main.min.js" async></script>
         <script>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", function () {
-                    navigator.serviceWorker
-                        .register("serviceWorker.js")
-                        .then((res) => console.log("service worker registered"))
-                        .catch((err) =>
-                            console.log("service worker not registered", err)
-                        );
+            let newWorker;
+
+            function showUpdateBar() {
+                let snackbar = document.getElementById("snackbar");
+                snackbar.className = "show";
+            }
+            // The click event on the pop up notification
+            document
+                .getElementById("reload")
+                .addEventListener("click", function () {
+                    newWorker.postMessage({ action: "skipWaiting" });
                 });
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker
+                    .register("serviceWorker.js")
+                    .then((reg) => {
+                        console.log('sw registered')
+                        reg.addEventListener("updatefound", () => {
+                            // A wild service worker has appeared in reg.installing!
+                            newWorker = reg.installing;
+                            console.log('we are here to update')
+                            newWorker.addEventListener("statechange", () => {
+                                // Has network.state changed?
+                                switch (newWorker.state) {
+                                    case "installed":
+                                        if (
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            // new update available
+                                            showUpdateBar();
+                                        }
+                                        // No update available
+                                        break;
+                                }
+                            });
+                        });
+                    }).catch(error => console.log('sw not registered'));
+
+                let refreshing;
+                navigator.serviceWorker.addEventListener(
+                    "controllerchange",
+                    function () {
+                        if (refreshing) return;
+                        window.location.reload();
+                        refreshing = true;
+                    }
+                );
             }
         </script>
     </body>

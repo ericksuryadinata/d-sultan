@@ -28,10 +28,9 @@ body:before {
     }
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
+body {
+    font-family: "Poppins", sans-serif;
 }
-
 
 .mb {
     margin-bottom: 3.5rem;
@@ -41,8 +40,8 @@ body{
     bottom: 0px;
     width: 100%;
     padding: 0;
-    z-index: 999;
-    background-color:#008037;
+    z-index: 11;
+    background-color: #008037;
 }
 .tabs-with-content .tabs:not(:last-child) {
     margin-bottom: 0;
@@ -60,9 +59,52 @@ body{
     border-bottom-color: transparent !important;
 }
 
-.divider::before{
+.divider::before {
     margin-right: 0;
 }
 .divider::after {
     margin-left: 0;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 22;
+    left: 50%;
+    bottom: 70px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
