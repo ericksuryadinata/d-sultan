@@ -43,20 +43,10 @@ let getBreakpoint = function () {
 };
 
 let changeImageSrc = function () {
-    if(breakpoint === 'small'){
-        document.getElementById('dsultan-kering-tempe').src = "https://via.placeholder.com/360x360?text=360x360"
-        document.getElementById('dsultan-kering-tempe-250gram').src = "https://via.placeholder.com/360x360?text=360x360xa"
-        document.getElementById('dsultan-kering-tempe-500gram').src = "https://via.placeholder.com/360x360?text=360x360xb"
-        document.getElementById('dsultan-kering-tempe-with-rice').src = "https://via.placeholder.com/360x360?text=360x360"
-        document.getElementById('dsultan-kering-tempe-only').src = "https://via.placeholder.com/360x360?text=360x360"
-        document.getElementById('dsultan-kering-tempe-full').src = "https://via.placeholder.com/360x360?text=360x360"
-    }else{
-        document.getElementById('dsultan-kering-tempe-with-rice').src = "https://via.placeholder.com/1152x500?text=1152x500"
-        document.getElementById('dsultan-kering-tempe-only').src = "https://via.placeholder.com/1152x500?text=1152x500"
-        document.getElementById('dsultan-kering-tempe-full').src = "https://via.placeholder.com/1152x500?text=1152x500"
-        document.getElementById('dsultan-kering-tempe').src = "https://via.placeholder.com/1152x500?text=1152x500"
-        document.getElementById('dsultan-kering-tempe-250gram').src = "https://via.placeholder.com/1152x500?text=1152x500xa"
-        document.getElementById('dsultan-kering-tempe-500gram').src = "https://via.placeholder.com/1152x500?text=1152x500xb"
+    if (breakpoint === 'small') {
+        console.log("small");
+    } else {
+        console.log("not small");
     }
 };
 
@@ -68,8 +58,8 @@ changeImageSrc();
 // Recalculate breakpoint on resize
 window.addEventListener('resize', function () {
 
-	breakpoint = getBreakpoint();
+    breakpoint = getBreakpoint();
 
-	changeImageSrc();
+    changeImageSrc();
 
 }, false);

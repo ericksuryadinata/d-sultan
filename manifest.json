@@ -1,0 +1,16 @@
+{
+  "name": "Dsultan Kering Tempe",
+  "short_name": "Dsultan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "description": "Dsultan Kering Tempe",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "assets/img/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

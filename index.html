@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Static Website</title>
+        <meta name="theme-color" content="#2A3443" />
+        <meta name="description" content="D'Sultan Kering Tempe" />
         <link
-            rel="stylesheet"
+            rel="preload"
+            as="style"
+            onload="this.rel = 'stylesheet'"
             href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
         />
         <link
-            rel="stylesheet"
+            rel="preload"
+            as="style"
+            onload="this.rel = 'stylesheet'"
             href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-divider@1.0.0/dist/bulma-divider.min.css"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/slider.css" />
+        <link
+            rel="preload"
+            as="style"
+            onload="this.rel = 'stylesheet'"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        />
+        <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+        <link rel="apple-touch-icon" href="assets/img/icon-144x144.png" />
+        <link rel="preload" as="style" href="assets/css/main.min.css" onload="this.rel = 'stylesheet'"/>
+        <link rel="preload" as="style" href="assets/css/slider.min.css" onload="this.rel = 'stylesheet'"/>
+        <link rel="manifest" href="manifest.json" />
     </head>
     <body>
         <section class="section">
@@ -23,8 +37,8 @@
                     <div class="column is-one-quarter">
                         <img
                             id="dsultan-kering-tempe"
-                            src="https://via.placeholder.com/360x360?text=360x360"
-                            alt=""
+                            src="assets/img/dsultan-kering-tempe.webp"
+                            alt="dsultan-kering-tempe"
                         />
                     </div>
                     <div class="column">
@@ -51,23 +65,30 @@
                 <div class="columns is-desktop">
                     <div class="column">
                         <img
-                            id="dsultan-kering-tempe-full"
-                            src="https://via.placeholder.com/360x360?text=360x360"
-                            alt=""
+                            id="dsultan-kering-tempe-teri-tuban"
+                            src="assets/img/dsultan-kering-tempe-teri-tuban.webp"
+                            alt="dsultan-kering-tempe-teri-tuban"
                         />
                     </div>
                     <div class="column">
                         <img
-                            id="dsultan-kering-tempe-only"
-                            src="https://via.placeholder.com/360x360?text=360x360"
-                            alt=""
+                            id="dsultan-kering-tempe-mangkuk"
+                            src="assets/img/dsultan-kering-tempe-mangkuk.webp"
+                            alt="dsultan-kering-tempe-mangkuk"
                         />
                     </div>
                     <div class="column">
                         <img
-                            id="dsultan-kering-tempe-with-rice"
-                            src="https://via.placeholder.com/360x360?text=360x360"
-                            alt=""
+                            id="dsultan-kering-tempe-dengan-nasi"
+                            src="assets/img/dsultan-kering-tempe-dengan-nasi.webp"
+                            alt="dsultan-kering-tempe-dengan-nasi"
+                        />
+                    </div>
+                    <div class="column">
+                        <img
+                            id="dsultan-kering-tempe-kemasan"
+                            src="assets/img/dsultan-kering-tempe-kemasan.webp"
+                            alt="dsultan-kering-tempe-kemasan"
                         />
                     </div>
                 </div>
@@ -82,19 +103,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="columns is-desktop tabs-with-content">
+                <div class="columns tabs-with-content is-centered">
                     <div class="column tab-content">
                         <img
-                            id="dsultan-kering-tempe-250gram"
-                            src="https://via.placeholder.com/1152x500?text=1152x500a"
-                            alt=""
+                            id="dsultan-kering-tempe-250-gram"
+                            src="assets/img/dsultan-kering-tempe-250-gram.webp"
+                            alt="dsultan-kering-tempe-250-gram"
                         />
                     </div>
                     <div class="column tab-content">
                         <img
-                            id="dsultan-kering-tempe-500gram"
-                            src="https://via.placeholder.com/1152x500?text=1152x500b"
-                            alt=""
+                            id="dsultan-kering-tempe-500-gram"
+                            src="assets/img/dsultan-kering-tempe-500-gram.webp"
+                            alt="dsultan-kering-tempe-500-gram"
                         />
                     </div>
                 </div>
@@ -137,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="columns is-desktop">
+                <div class="columns is-desktop is-centered">
                     <div class="column">
                         <div class="slider" id="slider">
                             <!-- Every slider-item element is considered a slide -->
@@ -145,27 +166,34 @@
                             <div class="slider-item">
                                 <!-- You can embed whatever you want insider this and provide custom styling -->
                                 <img
-                                    src="https://via.placeholder.com/1152x500?text=1152x500a"
+                                    src="assets/img/dsultan-kering-tempe-testimonial-1.webp"
                                     alt=""
                                 />
                             </div>
 
                             <div class="slider-item">
                                 <img
-                                    src="https://via.placeholder.com/1152x500?text=1152x500b"
+                                    src="assets/img/dsultan-kering-tempe-testimonial-2.webp"
                                     alt=""
                                 />
                             </div>
 
                             <div class="slider-item">
                                 <img
-                                    src="https://via.placeholder.com/1152x500?text=1152x500c"
+                                    src="assets/img/dsultan-kering-tempe-testimonial-3.webp"
+                                    alt=""
+                                />
+                            </div>
+
+                            <div class="slider-item">
+                                <img
+                                    src="assets/img/dsultan-kering-tempe-testimonial-4.webp"
                                     alt=""
                                 />
                             </div>
 
                             <!-- adding buttons for next and prev -->
-                            <button class="prev">
+                            <button class="prev" name="prev" aria-label="prev">
                                 <!-- icon for button -->
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +206,7 @@
                                     />
                                 </svg>
                             </button>
-                            <button class="next">
+                            <button class="next" name="next" aria-label="next">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -195,6 +223,7 @@
                             <img
                                 class="background"
                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAABfCAYAAADWH0qpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABBdEVYdERlc2NyaXB0aW9uADRrIHdhbGxwYXBlciBMb3ZlbHkgNGsgbWluaW1hbGlzdCB3YWxscGFwZXIgNjcgaW1hZ2VznMvVCQAAABl0RVh0Q29weXJpZ2h0ADRyZWNlbnRjYXJzLmNvbdzHkxgAAABBdEVYdENvbW1lbnQAQ1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2ODApLCBxdWFsaXR5ID0gOTAKfVTa3QAAATFJREFUeF7t08EJwDAAAzGn++/c5tElDiQwnuDOtvcOCHr+B4IEDGEChjABQ5iAIUzAECZgCBMwhAkYwgQMYQKGMAFDmIAhTMAQJmAIEzCECRjCBAxhAoYwAUOYgCFMwBAmYAgTMIQJGMIEDGEChjABQ5iAIUzAECZgCBMwhAkYwgQMYQKGMAFDmIAhTMAQJmAIEzCECRjCBAxhAoYwAUOYgCFMwBAmYAgTMIQJGMIEDGEChjABQ5iAIUzAECZgCBMwhAkYwgQMYQKGMAFDmIAhTMAQJmAIEzCECRjCBAxhAoYwAUOYgCFMwBAmYAgTMIQJGMIEDGEChjABQ5iAIUzAECZgCBMwhAkYwgQMYQKGMAFDmIAhTMAQJmAIEzCECRjCBAxhAoYwAUOYgCFMwJC1fQ6sAb3QNcqwAAAAAElFTkSuQmCC"
+                                alt="background"
                             />
 
                             <!-- Span element consist of Swicthes -->
@@ -209,10 +238,25 @@
         <div class="mb"></div>
         <footer class="footer fixed">
             <div class="content has-text-centered is-small is-primary">
-                <h1 class="is-marginless">ORDER NOW</h1>
+                <img
+                    src="assets/img/dsultan-kering-tempe-order.webp"
+                    alt="dsultan-kering-tempe-order"
+                />
             </div>
         </footer>
-        <script src="assets/js/slider.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/slider.min.js" async></script>
+        <script src="assets/js/main.min.js" async></script>
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("serviceWorker.js")
+                        .then((res) => console.log("service worker registered"))
+                        .catch((err) =>
+                            console.log("service worker not registered", err)
+                        );
+                });
+            }
+        </script>
     </body>
 </html>

@@ -10,7 +10,8 @@
 
 .slider {
 	position: relative;
-	overflow: hidden;
+    overflow: hidden;
+    height: 360px;
 }
 .slider .slider-item {
 	display: block;
